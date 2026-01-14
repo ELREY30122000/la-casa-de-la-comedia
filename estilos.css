@@ -216,6 +216,85 @@ body {
   display: block;
 }
 
+/********************************************************************************************/
+
+.bloque-comedia{
+  background:black;
+  width:100%;
+  padding: 5px 0;   /* Puedes subir si quieres más alto el bloque */
+  text-align:center;
+}
+
+/* Texto amarillo (más grande) */
+.titulo-comedia{
+  color:#F1C40F;
+  font-size:120px;     /* Aumentado */
+  font-weight:900;
+  margin:0;
+  letter-spacing:2px; /* Se ve más elegante */
+}
+
+/* Texto blanco (más pequeño pero grande igual) */
+.subtitulo-comedia{
+  color:#fff;
+  font-size:78px;     /* Un poco más pequeño que el amarillo */
+  font-weight:900;
+  margin-top:20px;
+}
+
+/********************************************************************************************/
+
+/* BLOQUE NEGRO */
+.bloque-evento {
+  background: black;
+  color: white;
+  padding: 0px 0;          /* ⬅️ Reduce altura arriba y abajo */
+}
+
+/* CONTENEDOR INTERNO */
+.contenido-evento {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;      /* Centra verticalmente */
+  justify-content: space-between;
+  gap: 30px;                /* Espacio entre texto y video */
+}
+
+/* TEXTO */
+.texto-evento {
+  width: 48%;        /* ⬅️ Más angosto, más elegante */
+  text-align: left;
+}
+
+.texto-evento h2 {
+  color: #FFD700;
+  font-size: 45px;   /* 🔥 Más grande */
+  font-weight: normal;  /* ❌ Sin negrita */
+  margin-bottom: 10px;
+}
+
+.texto-evento p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* VIDEO */
+.video-evento {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-evento iframe {
+  width: 100%;
+  height: 540px;           /* ⬅️ Hazlo más grande aquí */
+  border-radius: 5px;
+}
+
+
 
 
 
