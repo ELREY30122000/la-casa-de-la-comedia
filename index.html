@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ponce Producciones</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
@@ -63,7 +64,6 @@
                     cada función se convierte en una fiesta donde el humor y la alegría son los protagonistas absolutos.
                 </p>
 
-                <!-- NUEVO PÁRRAFO CORTO DE 2 LÍNEAS -->
                 <p>
                     Seguiremos innovando, creciendo y sorprendiendo con nuevas propuestas.
                     La comedia continúa… ¡y tú eres parte de ella!
@@ -81,56 +81,84 @@
         </div>
     </section>
 
+    <section class="artists-section">
+        <div class="artists-grid">
 
+            <!-- fila 1 -->
 
-    <section class="banner">
-        <h2>Producción de Eventos Profesionales</h2>
-        <p>Fotografía - Video - Sonido - Iluminación</p>
+            <div class="artist">
+                <img src="images/artista1.png" alt="Artista 1">
+                <span class="artist-name">Xiomy Kanashiro</span>
+            </div>
+
+            <div class="artist">
+                <img src="images/artista2.png" alt="Artista 2">
+                <span class="artist-name">Comico Sapito</span>
+            </div>
+
+            <div class="artist">
+                <img src="images/artista3.png" alt="Artista 3">
+                <span class="artist-name">Jefferson el Canero</span>
+            </div>
+
+            <div class="artist">
+                <img src="images/artista4.png" alt="Artista 4">
+                <span class="artist-name">Luigui Carbajal</span>
+            </div>
+
+            <div class="artist">
+                <img src="images/artista5.png" alt="Artista 5">
+                <span class="artist-name">La Shirley</span>
+            </div>
+
+            <!-- fila 2 -->
+
+            <div class="artist">
+                <img src="images/artista6.png" alt="Artista 6">
+                <span class="artist-name">Dayanita Show</span>
+            </div>
+
+            <div class="artist">
+                <img src="images/artista7.png" alt="Artista 7">
+                <span class="artist-name">Flautin</span>
+            </div>
+
+            <div class="artist">
+                <img src="images/artista8.png" alt="Artista 8">
+                <span class="artist-name">Lisandra</span>
+            </div>
+
+            <div class="artist">
+                <img src="images/artista9.png" alt="Artista 9">
+                <span class="artist-name">Frejolito</span>
+            </div>
+
+            <div class="artist">
+                <img src="images/artista10.png" alt="Artista 10">
+                <span class="artist-name">Jofresito</span>
+            </div>
+
     </section>
 
-    <section class="servicios">
-        <h2>Nuestros Servicios</h2>
+    <!-- ===== MODAL GALERÍA ===== -->
+    <div id="artistModal" class="artist-modal">
+        <div class="modal-overlay"></div>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Fotografía Profesional</h3>
-                <p>Capturamos los mejores momentos de tus eventos.</p>
-            </div>
+        <div class="modal-box">
+            <span class="modal-close">&times;</span>
 
-            <div class="card">
-                <h3>Video Producción</h3>
-                <p>Edición y grabación de alta calidad.</p>
-            </div>
-
-            <div class="card">
-                <h3>Sonido e Iluminación</h3>
-                <p>Equipos profesionales para cualquier evento.</p>
-            </div>
+            <button class="modal-prev">&#10094;</button>
+            <img id="modalImage" class="modal-image">
+            <button class="modal-next">&#10095;</button>
         </div>
-    </section>
+    </div>
 
-    <section class="galeria">
-        <h2>Galería</h2>
-
-        <div class="imagenes">
-            <img src="https://ponceproducciones.com/wp-content/uploads/2024/03/Fiestas-y-eventos.jpg">
-            <img src="https://ponceproducciones.com/wp-content/uploads/2024/03/Animacion.jpg">
-            <img src="https://ponceproducciones.com/wp-content/uploads/2024/03/Fiestas-infantiles.jpg">
-        </div>
-    </section>
-
-    <section class="contacto">
-        <h2>Contáctanos</h2>
-        <p>📍 Lima - Perú</p>
-        <p>📞 999 999 999</p>
-        <p>✉️ contacto@ponceproducciones.com</p>
-    </section>
-
-
-
-    <a href="https://wa.me/51999999999" class="whatsapp" target="_blank">
-        💬
+    <a href="https://api.whatsapp.com/send?phone=51997551917" class="whatsapp-float" target="_blank">
+        <img src="images/wsp.png" alt="WhatsApp">
     </a>
+
+    <script src="scripts.js"></script>
+
 </body>
 
 </html>

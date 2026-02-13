@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
     font-family: Arial;
     margin: 0;
@@ -203,16 +209,23 @@ body {
 
 .banner-imagen {
   width: 100%;
-  height: 870px;   /* AJUSTA ESTE VALOR */
-  margin: 0;
-  padding: 0;
+  height: 90vh;        /* 🔑 clave */
+  min-height: 450px;  /* evita que sea muy pequeña */
+  max-height: 850px;  /* evita que se dispare */
   overflow: hidden;
+}
+
+/* Quitar padding global solo a la imagen principal */
+.banner-imagen {
+  padding: 0 !important;
+  margin: 0;
 }
 
 .banner-imagen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -293,6 +306,390 @@ body {
   height: 540px;           /* ⬅️ Hazlo más grande aquí */
   border-radius: 5px;
 }
+
+/* ===============================
+   RESPONSIVE GENERAL
+================================ */
+
+/* TABLETS */
+@media (max-width: 1024px) {
+
+  .contenido-evento {
+    gap: 20px;
+  }
+
+  .texto-evento {
+    width: 52%;
+  }
+
+  .video-evento {
+    width: 48%;
+  }
+
+  .video-evento iframe {
+    height: 420px;
+  }
+
+  .titulo-comedia {
+    font-size: 70px;
+  }
+
+  .subtitulo-comedia {
+    font-size: 42px;
+  }
+}
+
+/* CELULARES */
+@media (max-width: 768px) {
+
+  /* Texto + video en columna */
+  .contenido-evento {
+    flex-direction: column;
+  }
+
+  .texto-evento,
+  .video-evento {
+    width: 100%;
+  }
+
+  .video-evento iframe {
+    height: 260px;
+  }
+
+  /* Títulos */
+  .titulo-comedia {
+    font-size: 42px;
+  }
+
+  .subtitulo-comedia {
+    font-size: 26px;
+  }
+
+  .texto-evento h2 {
+    font-size: 30px;
+  }
+
+  /* Párrafos */
+  .texto-evento p {
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE PROGRESIVO
+================================ */
+
+/* Ajuste desde pantallas medianas */
+@media (max-width: 1300px) {
+
+  nav ul {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .contenido-evento {
+    width: 95%;
+  }
+}
+
+/* Laptop pequeña / ventana reducida */
+@media (max-width: 1100px) {
+
+  .contenido-evento {
+    flex-direction: column;
+  }
+
+  .texto-evento,
+  .video-evento {
+    width: 100%;
+  }
+
+  .video-evento iframe {
+    height: 380px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .titulo-comedia {
+    font-size: 60px;
+  }
+
+  .subtitulo-comedia {
+    font-size: 36px;
+  }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  .video-evento iframe {
+    height: 250px;
+  }
+
+  .texto-evento h2 {
+    font-size: 28px;
+  }
+}
+
+.artists-section {
+  background-color: #000;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.artists-grid {
+  width: 90%;
+  max-width: 1200px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  column-gap: 40px;
+  row-gap: 70px;
+}
+
+.artist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artist img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 2px solid #caa24d; /* borde dorado como referencia */
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .artists-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .artist img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .artists-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .artist img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.artist img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(202, 162, 77, 0.6);
+}
+
+.artist {
+  position: relative;
+}
+
+/* NOMBRE OCULTO */
+.artist-name {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: black;
+  color: white;
+  padding: 6px 12px;
+  font-size: 16px;
+  border: 1px solid #caa24d;
+  border-radius: 4px;
+
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+/* AL PASAR EL CURSOR */
+.artist:hover .artist-name {
+  opacity: 1;
+  bottom: -45px;
+}
+
+/* =========================================================================================== */
+
+/* BOTÓN WHATSAPP FLOTANTE */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 110px;
+  height: 110px;
+
+  background-color: #25D366;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 9999;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* IMAGEN DENTRO */
+.whatsapp-float img {
+  width: 180%;
+  height: 180%;
+  object-fit: contain;
+}
+
+/* HOVER */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .whatsapp-float img {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+/* ===== MODAL ARTISTAS ===== */
+.artist-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+}
+
+/* Fondo oscuro */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* Caja central */
+.modal-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagen */
+.modal-image {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+/* Flechas */
+.modal-prev,
+.modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.modal-prev { left: 40px; }
+.modal-next { right: 40px; }
+
+/* Cerrar */
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+
+  .modal-image {
+    max-width: 90%;
+    max-height: 75%;
+  }
+
+  .modal-prev,
+  .modal-next {
+    font-size: 35px;
+  }
+
+  .modal-prev {
+    left: 15px;
+  }
+
+  .modal-next {
+    right: 15px;
+  }
+
+  .modal-close {
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+  }
+
+}
+
 
 
 
